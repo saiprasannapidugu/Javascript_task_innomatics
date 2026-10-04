@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #D8A2A2;
+            text-align: center;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2,650px);
+            justify-content: center;
+            row-gap: 20px;
+            
+            /* grid-template-rows: 300px,300px,300px,300px; */
+
+        }
+        .container > div:hover{
+            transform: scale(1.05);
+            box-shadow: 5px 5px 5px 5px gray;
+        }
+        .container > div{
+            height: 400px;
+            width: 600px;
+            background-color:#dce0e4;
+            border: 2px solid #dce0e4;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover{
+          background-color:#883ae0; ;  
+        }
+        button{
+            height: 40px;
+            width:100% ;
+            background-color: #A290B7;
+            border-radius: 10px;
+            border: none;
+
+        }
+        table{
+            border-spacing: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="container">
+     <div>
+    <h1>Average of three</h1>
+    <table>
+        <tr>
+            <td><label>Enter number 1:</label></td>
+            <td><input type="text" id="n1"><br></td>
+        </tr>
+        <tr>
+            <td><label>Enter number 2:</label></td>
+            <td> <input type="text" id="n2"><br></td>
+        </tr>
+        <tr>
+            <td><label>Enter number 3:</label></td>
+            <td><input type="text" id="n3"><br></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+             <button onclick="averagethree()">Average</button><br>
+            </td> 
+        </tr>
+        <tr>
+            <td><label>Average:</label></td>
+            <td><input type="text" id="res" readonly><br></td>
+        </tr>
+        
+    </table>
+    </div>
+
+
+      <div>
+    <h1>Average of three using DOM</h1>
+    <table>
+        <tr>
+            <td><label>Enter number 1:</label></td>
+            <td><input type="text" id="dn1"><br></td>
+        </tr>
+        <tr>
+            <td> <label>Enter number 2:</label></td>
+            <td><input type="text" id="dn2"><br></td>
+        </tr>
+        <tr>
+            <td> <label>Enter number 3:</label></td>
+            <td><input type="text" id="dn3"><br></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="averageDom()">Average</button><br></td>
+        </tr>
+        <tr>
+            <td><label>Average:</label></td>
+            <td><input type="text" id="dres" readonly></td>
+        </tr>
+    </table>
+    </div>
+
+    <div>
+        <h1>Sum of n natural numbers</h1>
+        <table>
+            <tr>
+                <td><label>Enter the value of n:</label></td>
+                <td><input type="text" id="sn"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=sumnnatural()>Sum of natural</button><br></td>
+            </tr>
+            <tr>
+                <td><label>Sum of n natural</label></td>
+                <td><input type="text" id="snres" readonly></td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <div>
+        <h1>Average of n natural numbers</h1>
+        <table>
+            <tr>
+                <td><label>Enter the value of n:</label></td>
+                <td><input type="text" id="an"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=avgnatural()>Average of natural</button><br></td>
+            </tr>
+            <tr>
+                <td><label>average of n natural</label></td>
+                <td><input type="text" id="anres" readonly></td>
+            </tr>
+        </table>
+    </div>
+
+     <div>
+    <h1>Profit percentage</h1>
+    <table>
+        <tr>
+            <td><label>Enter cost price:</label></td>
+            <td><input type="text" id="p1"><br></td>
+        </tr>
+        <tr>
+            <td><label>Enter selling  price:</label></td>
+            <td><input type="text" id="p2"><br></td>
+        </tr>
+        <tr>
+            <td><label>Profit</label></td>
+            <td><input type="text" id="pres" readonly><br></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="profitperc()">Profit percentage</button><br></td>
+        </tr>
+        <tr>
+            <td><label>Profit percentage:</label></td>
+            <td><input type="text" id="pres2" readonly></td>
+        </tr>
+    </table>
+    </div>
+
+    <div>
+        <h1>Simple intrest</h1>
+        <table>
+            <tr>
+                <td><labe>Enter price:</labe></td>
+                <td><input type="text" id="price"><br></td>
+            </tr>
+            <tr>
+                <td><label>Enter time:</label></td>
+                <td><input type="text" id="time"><br></td>
+            </tr>
+            <tr>
+                <td><label>Enter rate:</label></td>
+                <td><input type="text" id="rate"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=simpleint()>simple intrest</button><br></td>
+            </tr>
+            <tr>
+                <td><label>simle intrest</label></td>
+                <td><input type="text" id="sim" readonly></td>
+            </tr>
+        </table>
+         
+    </div>
+    <div>
+        <h1>Missing angle of triangle</h1>
+        <table>
+            <tr>
+                <td><label>Enter angle 1:</label></td>
+                <td><input type="text" id="angle1"><br></td>
+            </tr>
+            <tr>
+                <td><label>Enter angle 2:</label></td>
+                <td><input type="text" id="angle2"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=missingangle()>Missing angle</button><br></td>
+            </tr>
+            <tr>
+                <td><label>Missing</label></td>
+                <td> <input type="text" id="angle3" readonly></td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h1>Last digit of number:</h1>
+        <table>
+            <tr>
+                <td><label>Enter the number:</label></td>
+                <td><input type="text" id="num"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=lastdigit()>LastDigit</button><br></td>
+            </tr>
+            <tr>
+                <td> <lablel>Last digit</lablel></td>
+                <td> <input type="text" id="last" readonly></td>
+            </tr>
+        </table>
+        
+    </div>
+
+    <div>
+        <h1>Remove last digit</h1>
+        <table>
+            <tr>
+                <td><label>Enter the number:</label></td>
+                <td><input type="text" id="rnum"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=remlast()>remove LastDigit</button><br></td>
+            </tr>
+            <tr>
+                <td><label>number:</label></td>
+                <td><input type="text" id="reml" readonly></td>
+            </tr>
+        </table>     
+    </div>
+    <div>
+        <h1>first digit of 3-digit number</h1>
+        <table>
+            <tr>
+                <td><label>Enter the number:</label></td>
+                <td><input type="text" id="tnum"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=firstdthree()>firstdigit</button><br></td>
+            </tr>
+            <tr>
+                <td><label>first digit:</label></td>
+                <td><input type="text" id="fdt" readonly></td>
+            </tr>
+        </table>  
+    </div>
+
+    <div>
+        <h1>First digit of 5-digit number</h1>
+        <table>
+            <tr>
+                <td><label>Enter the number:</label></td>
+                <td> <input type="text" id="fnum"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=firstdfive()>firstdigit</button><br></td>
+            </tr>
+            <tr>
+                <td><label>first digit:</label></td>
+                <td><input type="text" id="fdf" readonly></td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h1>Celsius → Fahrenheit conversion</h1>
+        <table>
+            <tr>
+                <td><label>Enter celsius :</label></td>
+                <td><input type="text" id="cel"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=celfahconv()>convert</button><br></td>
+            </tr>
+            <tr>
+                <td><label>Result:</label></td>
+                <td> <input type="text" id="fahr" readonly></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div>
+        <h1>Fahrenheit → Celsius conversion</h1>
+        <table>
+            <tr>
+                <td><label>Enter Fahrenheit:</label></td>
+                <td><input type="text" id="fah"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=fahcelconv()>Convert</button><br></td>
+            </tr>
+            <tr>
+                <td><label>Result:</label></td>
+                <td> <input type="text" id="celr"></td>
+            </tr>
+        </table>
+    
+        
+       
+    </div>
+    <div>
+        <h1>Gross salary</h1>
+        <table>
+            <tr>
+                <td><label>Enter basic salary:</label></td>
+                <td><input type="text" id="basic"><br></td>
+            </tr>
+            <tr>
+                <td><label>HRA:</label></td>
+                <td> <input type="text" id="hra"><br></td>
+            </tr>
+            <tr>
+                <td> <label>DA:</label></td>
+                <td> <input type="text" id="da"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <button onclick=grosssal()>Gross salary</button><br></td>
+            </tr>
+            <tr>
+                <td><label>Result:</label></td>
+                <td><input type="text" id="gross"></td>
+            </tr>
+        </table> 
+    </div>
+
+    <div>
+        <h1>Swap two numbers using third variable</h1>
+        <table>
+            <tr>
+                <td><label>Enter a value:</label></td>
+                <td><input type="text" id="first"><br></td>
+            </tr>
+            <tr>
+                <td><label>Enter b value:</label></td>
+                <td><input type="text" id="second"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=swapt()>Swap</button><br></td>
+                
+            </tr>
+            <tr>
+                <td> <label>After swap a=</label></td>
+                <td><input type="text" id="valuea"><br></td>
+            </tr>
+            <tr>
+                <td><label>After swap b=</label></td>
+                <td><input type="text" id="valueb"><br></td>
+            </tr>
+        </table>
+        
+    
+        
+    </div>
+    <div>
+        <h1>Swap two numbers without using third variable</h1>
+        <table>
+            <tr>
+                <td><label>Enter a value:</label></td>
+                <td> <input type="text" id="as"><br></td>
+            </tr>
+            <tr>
+                <td><label>Enter b value:</label></td>
+                <td><input type="text" id="bs"><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick=swap()>Swap</button><br></td>
+            </tr>
+            <tr>
+                <td><label>After swap a=</label></td>
+                <td><input type="text" id="swapa"><br></td>
+            </tr>
+            <tr>
+                <td> <label>After swap b=</label></td>
+                <td><input type="text" id="swapb"><br></td>
+            </tr>
+        </table>
+        
+       
+        
+ 
+    </div>
+
+   </div>
+
+    <script type="text/javascript" src="basicLogics.js"></script>
+</body>
+</html>
