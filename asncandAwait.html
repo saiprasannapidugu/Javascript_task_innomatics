@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head{
+            background-color: navy;
+            text-align: center;
+            padding:25px;
+            color: white;
+        }
+        #head2{
+            text-align: center;
+        }
+        #allmovies{
+            height: 60px;
+            background-color: gold;
+            width: 100vw;
+            border: none;
+            font-size: medium;
+        }
+        #output{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:20px;
+            overflow:hidden
+        }
+        .movies_card{
+             display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 540px;
+            width: 400px;
+            border: 2px solid rgb(233, 231, 231);
+            border-radius: 10px;
+            box-shadow: 0 0 10px 2px grey;  
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+        .movies_card p,h3,h4{
+            text-align: center;
+        }
+        .movies_card img{
+            display: block;
+            margin: 0 auto;
+            height: 300px;
+            width: 290px;
+            margin-top: 20px;
+            border-radius: 10%;
+            border: 2px solid rgb(178, 25, 51);
+        }
+        .movies_card:hover{
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">Top 100 movies</h1>
+    <h2 id="head2">All Movies</h2>
+    <button id="allmovies" onclick="topmovies()">Show all movies</button>
+    <div id="output"></div>
+    <script type="text/javascript" src="asncandAwait.js"></script>
+    
+</body>
+</html>
