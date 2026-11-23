@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    }
+        #head{
+            text-align: center;
+            padding:25px;
+            background-color: #222;
+            color: white;
+            margin-bottom: 30px;
+            width: 100vw;
+        }
+        #head2{
+            text-align: center;
+        }
+        #allproducts{
+            height: 60px;
+            background-color: gold;
+            width: 100vw;
+            border: none;
+            font-size: medium;
+        }
+        #output{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:20px;
+            overflow:hidden
+            
+        }
+        .product-card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 570px;
+            width: 450px;
+            border: 2px solid rgb(233, 231, 231);
+            border-radius: 10px;
+            box-shadow: 0 0 10px 2px grey;  
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+        .product-card h3,p,h5{
+             text-align: center;
+        }
+
+        .product-card img{
+            display: block;
+            margin: 0 auto;
+            height: 250px;
+            width: 200px;
+            padding-top: 10px;
+        }
+        .product-card h5{
+            color: gold;
+        }
+        .product-card button{
+            height: 40px;
+            width: 250px;
+            border-radius: 5px;
+            background-color: gold
+        }
+        .product-card button:hover{
+            background-color: goldenrod;
+        }
+        .product-card:hover{
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="head">My shopping store</h1>
+    <h2 id="head2">All products</h2>
+    <button id='allproducts' onclick="products()">Show Products</button>
+    <div id="output"></div>
+    <script type="text/javascript" src="fetchEX.js"></script>
+</body>
+</html>
